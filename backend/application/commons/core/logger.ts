@@ -1,7 +1,7 @@
 import { DateTimeNow } from "./innerDate";
 import * as clc from 'cli-color';
 import { LogLevel } from "../enums/log-level";
-import { Log } from "../../Models/log.model";
+import { LogModel } from "../../Models/log.model";
 
 const error = clc.red.bold;
 const warn = clc.yellow.bold;
@@ -41,7 +41,7 @@ export class Logger {
     console.log(unkn(`${DateTimeNow()} UNKN [${name === undefined || name === 'String' ? entity : name}] ${message}`));
   }
 
-  static Default(log: Log | any) {
+  static Default(log: LogModel | any) {
     switch (log.level) {
       case LogLevel.ERROR:
         return Logger.Error(log.source, log.message);

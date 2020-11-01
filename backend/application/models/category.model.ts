@@ -1,7 +1,7 @@
 import { AutoMap } from "@nartc/automapper";
 import { BaseModel } from "./base.model";
 
-export class ProductModel extends BaseModel {
+export class CategoryModel extends BaseModel {
   @AutoMap()
   public status: string;
 
@@ -9,22 +9,14 @@ export class ProductModel extends BaseModel {
   public name: string;
 
   @AutoMap()
-  public amount: number;
-
-  @AutoMap()
-  public value: number;
-
-  @AutoMap()
-  public categoryId: string;
+  public measure: string;
 
   constructor(json?: any) {
     super(json);
     if (json) {
       this.status = json.status;
       this.name = json.name;
-      this.amount = json.amount;
-      this.value = json.value;
-      this.categoryId = json.categoryId;
+      this.measure = json.measure;
     }
   }
 }

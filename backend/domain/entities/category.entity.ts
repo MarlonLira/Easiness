@@ -3,7 +3,7 @@ import { getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
 import { BaseEntity, schemaOptions } from "./base.entity";
 
 @modelOptions({ schemaOptions: schemaOptions })
-export class Product extends BaseEntity {
+export class Category extends BaseEntity {
   @prop() @AutoMap()
   public status: string;
 
@@ -11,24 +11,16 @@ export class Product extends BaseEntity {
   public name: string;
 
   @prop() @AutoMap()
-  public amount: number;
-
-  @prop() @AutoMap()
-  public value: number;
-
-  @prop() @AutoMap()
-  public categoryId: string;
+  public measure: string;
 
   constructor(json?: any) {
     super(json);
     if (json) {
       this.status = json.status;
       this.name = json.name;
-      this.amount = json.amount;
-      this.value = json.value;
-      this.categoryId = json.categoryId;
+      this.measure = json.measure;
     }
   }
 }
 
-export const ProductDAO = getModelForClass(Product);
+export const CategoryDAO = getModelForClass(Category);
