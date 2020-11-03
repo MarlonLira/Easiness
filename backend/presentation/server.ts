@@ -11,17 +11,6 @@ import { container } from '../Infrastructure/Crosscutting/IOC/inversify.config';
 import { Logger } from '../Application/Commons/core/logger';
 import { DbContext } from '../Infrastructure/Data/Context/db.context';
 
-declare global {
-  interface Object {
-    arrayToJSON(): any;
-  }
-}
-
-Object.prototype.arrayToJSON = function () {
-  let _obj: any = this;
-  return Array.isArray(_obj) ? JSON.parse(JSON.stringify(_obj)) : [];
-}
-
 class Server {
 
   public inversifyExpress: InversifyExpressServer;

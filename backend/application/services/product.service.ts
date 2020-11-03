@@ -20,6 +20,14 @@ export class ProductService implements IProductService {
     });
   }
 
+  update(product: ProductModel): Promise<ProductModel> {
+    return new Promise((resolve, reject) => {
+      this.repository.update(Mapper.map(product, Product, ProductModel))
+        .then((result) => resolve(result))
+        .catch(async (error: any) => reject(console.log(InnerException.decode(error))));
+    });
+  }
+
   toList(): Promise<ProductModel[]> {
     return new Promise((resolve, reject) => {
       this.repository.toList()
@@ -32,6 +40,14 @@ export class ProductService implements IProductService {
     return new Promise((resolve, reject) => {
       this.repository.getById(id)
         .then((result) => resolve(Mapper.map(result, ProductModel, Product)))
+        .catch(async (error: any) => reject(console.log(InnerException.decode(error))));
+    });
+  }
+
+  delete(id: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.repository.delete(id)
+        .then((result) => resolve(result))
         .catch(async (error: any) => reject(console.log(InnerException.decode(error))));
     });
   }
