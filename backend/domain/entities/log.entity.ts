@@ -1,23 +1,25 @@
 import { AutoMap } from "@nartc/automapper";
-import { BaseModel } from "./base.model";
+import { getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
+import { BaseEntity, schemaOptions } from "./base.entity";
 
-export class LogModel extends BaseModel {
-  @AutoMap()
+@modelOptions({ schemaOptions: schemaOptions })
+export class Log extends BaseEntity {
+  @prop() @AutoMap()
   public level: string;
 
-  @AutoMap()
+  @prop() @AutoMap()
   public message: string;
 
-  @AutoMap()
+  @prop() @AutoMap()
   public source: string;
 
-  @AutoMap()
+  @prop() @AutoMap()
   public code: string;
 
-  @AutoMap()
+  @prop() @AutoMap()
   public obj: string;
 
-  @AutoMap()
+  @prop() @AutoMap()
   public userId: string;
 
   constructor(json?: any) {
@@ -32,3 +34,5 @@ export class LogModel extends BaseModel {
     }
   }
 }
+
+export const LogDAO = getModelForClass(Log);
