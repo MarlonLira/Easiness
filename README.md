@@ -26,10 +26,11 @@
 - [Cookie Parser](https://www.npmjs.com/package/cookie-parser/ "Cookie Parser")
 - [Cors](https://adonisjs.com/docs/4.1/cors/ "Cors")
 - [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken/ "Jsonwebtoken")
-- [Sequelize](https://sequelize.org/v5/ "Sequelize")
+- [MongoDB](https://docs.mongodb.com/realm/get-started/introduction-backend/ "Mongo DB")
 - [Inversify](http://inversify.io/ "Inversify")
 - [AutoMapper](https://automapper.netlify.app/docs/guides/getting-started/ "@nartc/automapper")
 - [Cli-Color](https://github.com/medikoo/cli-color "cli-color")
+- [Typegoose](https://typegoose.github.io/typegoose/docs/guides/quick-start-guide/#how-to-start-using-it "Typegoose")
 
 ### Instalação Requisitos
 - Via Executavel.
